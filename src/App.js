@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import CategoryList from './components/CategoryList'
-import PhotoList from './components/PhotoList'
-import PhotoDetail from './components/PhotoDetail'
+import CategoryList from './pages/CategoryList'
+import PhotoList from './pages/PhotoList'
+import PhotoDetail from './pages/PhotoDetail'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -11,8 +11,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={CategoryList} />
-            <Route exact path="/photos" component={PhotoList} />
-            <Route exact path="/photos/:id" component={PhotoDetail} />
+            <Route exact path="/category/:id" component={PhotoList} />
+            <Route exact path="/photo/:id" component={PhotoDetail} />
           </Switch>
         </Router>
       </>
