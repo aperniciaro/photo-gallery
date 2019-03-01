@@ -1,21 +1,18 @@
 import React, { Component } from 'react'
 import data from '../data/jason.json'
-import PhotoList from './PhotoList'
-import Category from '../components/Category'
+import { Link } from 'react-router-dom'
 
 class CategoryList extends Component {
-  state = {
-    categories: Object.keys(data)
-  }
-
   render() {
     return (
       <>
         <h1>Jason's Interests</h1>
         <ul>
-          {this.state.categories.map((interest, index) => {
+          {Object.keys(data).map((hobby, index) => {
             return (
-              <Category key={index} category={this.state.categories[index]} />
+              <Link key={index} to={'/' + hobby}>
+                <li>{hobby}</li>
+              </Link>
             )
           })}
         </ul>
