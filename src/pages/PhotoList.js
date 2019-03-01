@@ -4,18 +4,14 @@ import { Link } from 'react-router-dom'
 import Photo from '../components/Photo.js'
 
 class PhotoList extends Component {
-  state = {
-    pics: this.props.match.params.catID.photos
-  }
-
   render() {
-    return this.state.pics.map((photo, index) => {
+    return data.match.params.id.photos.map((photo, index) => {
       return (
-        <Link to={'/picture/' + this.props.picID.photos.title}>
+        <Link to={'/picture/' + data.match.params.id.photos[index].title}>
           <Photo
             key={index}
-            imageURL={this.props.catID.photos[index].imageURL}
-            sourceURL={this.props.catID.photos[index].sourceURL}
+            imageURL={data.match.params.id.photos[index].imageURL}
+            sourceURL={data.match.params.id.photos[index].sourceURL}
           />
         </Link>
       )

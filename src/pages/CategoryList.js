@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import data from '../data/jason.json'
 import PhotoList from './PhotoList'
-import Interest from '../components/Interest'
+import Category from '../components/Category'
 
 class CategoryList extends Component {
-  state = { categories: Object.keys(data) }
+  state = {
+    categories: Object.keys(data)
+  }
 
   render() {
     return (
@@ -13,10 +15,7 @@ class CategoryList extends Component {
         <ul>
           {this.state.categories.map((interest, index) => {
             return (
-              <Interest
-                key={index}
-                categoryName={this.state.categories[index]}
-              />
+              <Category key={index} category={this.state.categories[index]} />
             )
           })}
         </ul>
