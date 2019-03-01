@@ -3,7 +3,7 @@ import data from '../data/jason.json'
 
 class Photo extends Component {
   render() {
-    return
+    return <img src={this.props.imageURL} alt={this.props.sourceURL} />
   }
 }
 

@@ -5,19 +5,21 @@ import Photo from '../components/Photo.js'
 
 class PhotoList extends Component {
   state = {
-    photos: [],
-    category: this.props.categoryName
+    pics: this.props.match.params.id.photos
   }
 
   render() {
-    return (
-      <li>
-        <Link to={'/category/' + this.props.categoryName}>
-          <h2>{this.state.category}</h2>
-          <PhotoDetail />
+    return this.state.pics.map((photo, index) => {
+      return (
+        <Link to={'/picture/' + this.props.id.photos.title}>
+          <Photo
+            key={index}
+            imageURL={this.props.id.photos[index].imageURL}
+            sourceURL={this.props.id.photos[index].sourceURL}
+          />
         </Link>
-      </li>
-    )
+      )
+    })
   }
 }
 
