@@ -7,8 +7,8 @@
 //     return (
 //       <>
 //         <Photo
-//           imageURL={this.props.catID.photos[index].imageURL}
-//           sourceURL={this.props.catID.photos[index].sourceURL}
+//           imageURL={this.props.id.photos[index].imageURL}
+//           sourceURL={this.props.id.photos[index].sourceURL}
 //         />
 //       </>
 //     )
